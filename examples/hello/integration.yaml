@@ -1,0 +1,8 @@
+name: hello
+# camelVersion: "4.22.x"
+# version: 0.1.0
+# requirements: { os: linux }
+# dependencies: [camel:sql, "mvn:org.postgresql:postgresql:42.7.13"]
+# kamelets: [my-shared-kamelet]
+# variableDefaults: { erp-url: "https://erp.example" }
+# jvm: { options: ["-XX:MaxRAMPercentage=60"], telemetry: on }

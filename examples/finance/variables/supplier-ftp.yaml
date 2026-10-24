@@ -1,0 +1,9 @@
+apiVersion: weik.io/v1
+kind: variable
+metadata: { name: supplier-ftp, project: finance }
+spec:
+  value: |
+    type = ftp
+    host = ftp.supplier.example
+    user = weikio
+    pass = {{supplier-ftp-password}}

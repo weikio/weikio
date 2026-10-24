@@ -1,0 +1,4 @@
+apiVersion: weik.io/v1
+kind: deployment
+metadata: { name: erp-invoice-export, project: finance, environment: production }
+spec: { version: 1.1.0, state: started }

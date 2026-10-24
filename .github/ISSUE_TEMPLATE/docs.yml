@@ -1,0 +1,23 @@
+name: Problem in the docs
+description: Report a mistake or something missing on a docs page.
+labels: [documentation]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Page
+      description: The address of the docs page.
+      placeholder: https://weik.io/docs/start/first-integration
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is wrong
+      description: What the page says and what you found.
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: What the page should say

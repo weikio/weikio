@@ -1,0 +1,8 @@
+apiVersion: weik.io/v1
+kind: variable
+metadata: { name: invoice-archive, project: finance }
+spec:
+  value: |
+    type = azureblob
+    account = financearchive
+    key = {{invoice-archive-key}}

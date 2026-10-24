@@ -1,0 +1,20 @@
+apiVersion: weik.io/v1
+kind: api
+metadata: { name: invoices, project: finance }
+spec: { displayName: Invoice API, prefix: /invoices }
+---
+apiVersion: weik.io/v1
+kind: api-version
+metadata: { name: v1, project: finance, api: invoices }
+spec:
+  type: proxy
+  rateLimit: { permitLimit: 600, window: 1m }
+  routes:
+    - RouteId: pending
+      Match: { Path: "/{**rest}" }
+      ClusterId: erp
+  clusters:
+    - ClusterId: erp
+      LoadBalancingPolicy: RoundRobin
+      Destinations:
+        erp: { Address: "{{erp-url}}/api/invoices" }

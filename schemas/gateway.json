@@ -1,0 +1,309 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "gateway",
+  "type": "object",
+  "properties": {
+    "apiVersion": {
+      "const": "weik.io/v1"
+    },
+    "kind": {
+      "const": "gateway"
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "additionalProperties": false
+    },
+    "spec": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "displayName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "environment": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "hostnames": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "servedBy": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "default": {
+          "type": "boolean"
+        },
+        "projects": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "entrances": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "networks": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "clientCertificate": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "mode": {
+              "type": "string"
+            },
+            "authorities": {
+              "type": [
+                "array",
+                "null"
+              ],
+              "items": {
+                "type": [
+                  "object",
+                  "null"
+                ],
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "certificates": {
+                    "type": "array",
+                    "items": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    }
+                  },
+                  "revoked": {
+                    "type": [
+                      "array",
+                      "null"
+                    ],
+                    "items": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    }
+                  }
+                },
+                "required": [
+                  "name",
+                  "certificates"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "mode"
+          ],
+          "additionalProperties": false,
+          "default": null
+        },
+        "callerLimit": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "permitLimit": {
+              "type": [
+                "string",
+                "integer"
+              ],
+              "pattern": "^-?(?:0|[1-9]\\d*)$"
+            },
+            "window": {
+              "type": "string",
+              "pattern": "^(0|([0-9]+y)?([0-9]+w)?([0-9]+d)?([0-9]+h)?([0-9]+m)?([0-9]+s)?([0-9]+ms)?)$",
+              "minLength": 1,
+              "description": "A duration: whole numbers, each with its unit y, w, d, h, m, s or ms, largest first, such as 30s, 1h30m or 7d."
+            }
+          },
+          "required": [
+            "permitLimit",
+            "window"
+          ],
+          "additionalProperties": false,
+          "default": null
+        },
+        "subscriptionLimit": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "permitLimit": {
+              "type": [
+                "string",
+                "integer"
+              ],
+              "pattern": "^-?(?:0|[1-9]\\d*)$"
+            },
+            "window": {
+              "type": "string",
+              "pattern": "^(0|([0-9]+y)?([0-9]+w)?([0-9]+d)?([0-9]+h)?([0-9]+m)?([0-9]+s)?([0-9]+ms)?)$",
+              "minLength": 1,
+              "description": "A duration: whole numbers, each with its unit y, w, d, h, m, s or ms, largest first, such as 30s, 1h30m or 7d."
+            }
+          },
+          "required": [
+            "permitLimit",
+            "window"
+          ],
+          "additionalProperties": false,
+          "default": null
+        },
+        "upstreams": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "networks": {
+              "type": "array",
+              "items": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          },
+          "additionalProperties": false,
+          "default": null
+        },
+        "maxRequestSize": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null
+        },
+        "relayFrom": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "default": null
+        },
+        "certificateSource": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null
+        },
+        "serverCertificates": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "chain": {
+                "type": "string"
+              },
+              "key": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "default": null,
+                "writeOnly": true,
+                "description": "The certificate's private key in PEM, required for a certificate that is not stored yet. The platform seals it and never serves it back; an entry sent without it keeps the stored key of the certificate of the same name and chain."
+              }
+            },
+            "required": [
+              "name",
+              "chain"
+            ],
+            "additionalProperties": false
+          },
+          "default": null
+        }
+      },
+      "required": [
+        "environment",
+        "entrances",
+        "networks"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "apiVersion",
+    "kind",
+    "metadata",
+    "spec"
+  ],
+  "additionalProperties": false
+}

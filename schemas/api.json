@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "api",
+  "type": "object",
+  "properties": {
+    "apiVersion": {
+      "const": "weik.io/v1"
+    },
+    "kind": {
+      "const": "api"
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "project": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "project"
+      ],
+      "additionalProperties": false
+    },
+    "spec": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "displayName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "prefix": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "prefix"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "apiVersion",
+    "kind",
+    "metadata",
+    "spec"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "telemetry-forwarding",
+  "type": "object",
+  "properties": {
+    "apiVersion": {
+      "const": "weik.io/v1"
+    },
+    "kind": {
+      "const": "telemetry-forwarding"
+    },
+    "spec": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "audit": {
+          "type": "object",
+          "properties": {
+            "exporters": {
+              "type": "array",
+              "items": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "processors": {
+              "type": [
+                "array",
+                "null"
+              ],
+              "items": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "default": null
+            }
+          },
+          "required": [
+            "exporters"
+          ],
+          "additionalProperties": false
+        },
+        "collector": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "audit",
+        "collector"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "apiVersion",
+    "kind",
+    "spec"
+  ],
+  "additionalProperties": false
+}

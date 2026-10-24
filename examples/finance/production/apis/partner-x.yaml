@@ -1,0 +1,7 @@
+apiVersion: weik.io/v1
+kind: api-subscription
+metadata: { name: partner-x, project: finance, environment: production }
+spec:
+  apis: [invoices]
+  type: apikey
+  rateLimit: { permitLimit: 60, window: 1m }

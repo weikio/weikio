@@ -1,0 +1,4 @@
+apiVersion: weik.io/v1
+kind: variable
+metadata: { name: erp-url, project: finance }
+spec: { value: https://erp-test.example.internal }

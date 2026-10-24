@@ -1,0 +1,181 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "environment",
+  "type": "object",
+  "properties": {
+    "apiVersion": {
+      "const": "weik.io/v1"
+    },
+    "kind": {
+      "const": "environment"
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "additionalProperties": false
+    },
+    "spec": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "displayName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "order": {
+          "type": [
+            "string",
+            "integer"
+          ],
+          "pattern": "^-?(?:0|[1-9]\\d*)$"
+        },
+        "isProduction": {
+          "type": "boolean"
+        },
+        "protection": {
+          "type": "object",
+          "properties": {
+            "allowSecretReveal": {
+              "type": "boolean"
+            },
+            "allowLatestVersion": {
+              "type": "boolean"
+            },
+            "offlineStartMaxAge": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "pattern": "^(0|([0-9]+y)?([0-9]+w)?([0-9]+d)?([0-9]+h)?([0-9]+m)?([0-9]+s)?([0-9]+ms)?)$",
+              "minLength": 1,
+              "description": "A duration: whole numbers, each with its unit y, w, d, h, m, s or ms, largest first, such as 30s, 1h30m or 7d."
+            },
+            "startOffline": {
+              "type": "boolean",
+              "default": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "budgets": {
+          "type": "object",
+          "properties": {
+            "eventsBytes": {
+              "type": [
+                "string",
+                "integer"
+              ],
+              "pattern": "^-?(?:0|[1-9]\\d*)$"
+            },
+            "entityEventsBytes": {
+              "type": [
+                "string",
+                "integer"
+              ],
+              "pattern": "^-?(?:0|[1-9]\\d*)$"
+            },
+            "entityStoreBytes": {
+              "type": [
+                "string",
+                "integer"
+              ],
+              "pattern": "^-?(?:0|[1-9]\\d*)$"
+            },
+            "deadLetterBytes": {
+              "type": [
+                "string",
+                "integer"
+              ],
+              "pattern": "^-?(?:0|[1-9]\\d*)$",
+              "default": 0
+            },
+            "idempotencyBytes": {
+              "type": [
+                "string",
+                "integer"
+              ],
+              "pattern": "^-?(?:0|[1-9]\\d*)$",
+              "default": 0
+            }
+          },
+          "required": [
+            "entityStoreBytes"
+          ],
+          "additionalProperties": false
+        },
+        "trustedCertificates": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "default": null
+        },
+        "launchDefaults": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "properties": {
+              "type": [
+                "object",
+                "null"
+              ],
+              "additionalProperties": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "default": null
+            },
+            "jvmOptions": {
+              "type": [
+                "array",
+                "null"
+              ],
+              "items": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "default": null
+            }
+          },
+          "additionalProperties": false,
+          "default": null
+        }
+      },
+      "required": [
+        "protection",
+        "budgets"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "apiVersion",
+    "kind",
+    "metadata",
+    "spec"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,22 @@
+name: plan
+on:
+  pull_request:
+    paths: ['finance/**']
+env:
+  WEIKIO_SERVER: https://weikio.example.com
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    environment: devtest
+    env:
+      WEIKIO_API_KEY: ${{ secrets.WEIKIO_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          curl -fsSL https://weik.io/install.sh | WEIKIO_CLI_VERSION=2026.2.0 sh
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+      - run: >
+          weikio diff --env devtest --prune finance
+          -f ./finance/erp-invoice-export -f ./finance/transfers -f ./finance/apis
+          -f ./finance/invoice-created -f ./finance/devtest
+          || [ $? -eq 2 ]

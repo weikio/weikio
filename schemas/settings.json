@@ -1,0 +1,450 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "settings",
+  "type": "object",
+  "properties": {
+    "apiVersion": {
+      "const": "weik.io/v1"
+    },
+    "kind": {
+      "const": "settings"
+    },
+    "spec": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "publicBaseUrl": {
+          "type": "string"
+        },
+        "localAccounts": {
+          "type": "string"
+        },
+        "bundleRetention": {
+          "type": "object",
+          "properties": {
+            "keepVersions": {
+              "type": [
+                "string",
+                "integer"
+              ],
+              "pattern": "^-?(?:0|[1-9]\\d*)$"
+            },
+            "maxAge": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "pattern": "^(0|([0-9]+y)?([0-9]+w)?([0-9]+d)?([0-9]+h)?([0-9]+m)?([0-9]+s)?([0-9]+ms)?)$",
+              "minLength": 1,
+              "description": "A duration: whole numbers, each with its unit y, w, d, h, m, s or ms, largest first, such as 30s, 1h30m or 7d."
+            }
+          },
+          "additionalProperties": false
+        },
+        "defaultCamelVersion": {
+          "type": "string"
+        },
+        "launchDefaults": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "properties": {
+              "type": [
+                "object",
+                "null"
+              ],
+              "additionalProperties": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "default": null
+            },
+            "jvmOptions": {
+              "type": [
+                "array",
+                "null"
+              ],
+              "items": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "default": null
+            }
+          },
+          "additionalProperties": false,
+          "default": null
+        },
+        "backupEvery": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^(0|([0-9]+y)?([0-9]+w)?([0-9]+d)?([0-9]+h)?([0-9]+m)?([0-9]+s)?([0-9]+ms)?)$",
+          "minLength": 1,
+          "description": "A duration: whole numbers, each with its unit y, w, d, h, m, s or ms, largest first, such as 30s, 1h30m or 7d.",
+          "default": null
+        },
+        "backupKeep": {
+          "type": [
+            "string",
+            "integer",
+            "null"
+          ],
+          "pattern": "^-?(?:0|[1-9]\\d*)$",
+          "default": null
+        },
+        "backupCopyTo": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null
+        },
+        "twoFactorRequired": {
+          "type": "boolean",
+          "default": true
+        },
+        "apimEntrances": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "addresses": {
+                "type": "array",
+                "items": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              },
+              "callerAddressKnown": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "name"
+            ],
+            "additionalProperties": false
+          },
+          "default": null
+        },
+        "certificates": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "automatic": {
+              "type": "boolean"
+            },
+            "authority": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "default": null
+            },
+            "contact": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "default": null
+            },
+            "publicAddresses": {
+              "type": [
+                "array",
+                "null"
+              ],
+              "items": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "default": null
+            },
+            "hubCertificates": {
+              "type": [
+                "array",
+                "null"
+              ],
+              "items": {
+                "type": [
+                  "object",
+                  "null"
+                ],
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "chain": {
+                    "type": "string"
+                  },
+                  "key": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "default": null,
+                    "writeOnly": true,
+                    "description": "The certificate's private key in PEM, required for a certificate that is not stored yet. The platform seals it and never serves it back; an entry sent without it keeps the stored key of the certificate of the same name and chain."
+                  }
+                },
+                "required": [
+                  "name",
+                  "chain"
+                ],
+                "additionalProperties": false
+              },
+              "default": null
+            },
+            "dns": {
+              "type": [
+                "array",
+                "null"
+              ],
+              "items": {
+                "type": [
+                  "object",
+                  "null"
+                ],
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "provider": {
+                    "type": "string"
+                  },
+                  "zones": {
+                    "type": "array",
+                    "items": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    }
+                  },
+                  "credential": {
+                    "type": "string"
+                  },
+                  "azure": {
+                    "type": [
+                      "object",
+                      "null"
+                    ],
+                    "properties": {
+                      "tenant": {
+                        "type": "string"
+                      },
+                      "client": {
+                        "type": "string"
+                      },
+                      "objectId": {
+                        "type": "string"
+                      },
+                      "subscription": {
+                        "type": "string"
+                      },
+                      "resourceGroup": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "tenant",
+                      "client",
+                      "objectId",
+                      "subscription",
+                      "resourceGroup"
+                    ],
+                    "additionalProperties": false,
+                    "default": null
+                  },
+                  "rfc2136": {
+                    "type": [
+                      "object",
+                      "null"
+                    ],
+                    "properties": {
+                      "server": {
+                        "type": "string"
+                      },
+                      "keyName": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "server",
+                      "keyName"
+                    ],
+                    "additionalProperties": false,
+                    "default": null
+                  }
+                },
+                "required": [
+                  "name",
+                  "provider",
+                  "zones",
+                  "credential"
+                ],
+                "additionalProperties": false
+              },
+              "default": null
+            },
+            "authorities": {
+              "type": [
+                "array",
+                "null"
+              ],
+              "items": {
+                "type": [
+                  "object",
+                  "null"
+                ],
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "acme": {
+                    "type": "string"
+                  },
+                  "externalAccount": {
+                    "type": [
+                      "object",
+                      "null"
+                    ],
+                    "properties": {
+                      "keyId": {
+                        "type": "string"
+                      },
+                      "key": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "keyId",
+                      "key"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "trust": {
+                    "type": [
+                      "array",
+                      "null"
+                    ],
+                    "items": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    }
+                  },
+                  "names": {
+                    "type": "array",
+                    "items": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    }
+                  },
+                  "orders": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "clientCertificates": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "name",
+                  "acme",
+                  "names"
+                ],
+                "additionalProperties": false
+              },
+              "default": null
+            },
+            "platformAuthority": {
+              "type": [
+                "object",
+                "null"
+              ],
+              "properties": {
+                "names": {
+                  "type": [
+                    "array",
+                    "null"
+                  ],
+                  "items": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  }
+                }
+              },
+              "additionalProperties": false,
+              "default": null
+            },
+            "hubNames": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "default": null
+            }
+          },
+          "additionalProperties": false,
+          "default": null
+        },
+        "allowedNetworks": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "default": null
+        }
+      },
+      "required": [
+        "publicBaseUrl",
+        "localAccounts",
+        "bundleRetention",
+        "defaultCamelVersion"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "apiVersion",
+    "kind",
+    "spec"
+  ],
+  "additionalProperties": false
+}

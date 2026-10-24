@@ -1,0 +1,261 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "event-channel",
+  "type": "object",
+  "properties": {
+    "apiVersion": {
+      "const": "weik.io/v1"
+    },
+    "kind": {
+      "const": "event-channel"
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "project": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "project"
+      ],
+      "additionalProperties": false
+    },
+    "spec": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "labels": {
+          "type": "object",
+          "additionalProperties": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "requirements": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "variableDefaults": {
+          "type": "object",
+          "additionalProperties": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "camelVersion": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "dependencies": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "default": null
+        },
+        "kamelets": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "default": null
+        },
+        "jvm": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "options": {
+              "type": "array",
+              "items": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "telemetry": {
+              "default": null
+            },
+            "traceSampling": {
+              "type": [
+                "string",
+                "number",
+                "null"
+              ],
+              "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?(?:[eE][+-]?\\d+)?$",
+              "default": null,
+              "minimum": 0,
+              "maximum": 1
+            }
+          },
+          "additionalProperties": false,
+          "default": null
+        },
+        "startOffline": {
+          "type": "boolean",
+          "default": true
+        },
+        "bundleRetention": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "keepVersions": {
+              "type": [
+                "string",
+                "integer"
+              ],
+              "pattern": "^-?(?:0|[1-9]\\d*)$"
+            },
+            "maxAge": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "pattern": "^(0|([0-9]+y)?([0-9]+w)?([0-9]+d)?([0-9]+h)?([0-9]+m)?([0-9]+s)?([0-9]+ms)?)$",
+              "minLength": 1,
+              "description": "A duration: whole numbers, each with its unit y, w, d, h, m, s or ms, largest first, such as 30s, 1h30m or 7d."
+            }
+          },
+          "additionalProperties": false,
+          "default": null
+        },
+        "runtime": {
+          "type": "string",
+          "default": "camel-main"
+        },
+        "singleton": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "default": null
+        },
+        "whenHubUnreachable": {
+          "enum": [
+            "keepLeading",
+            "standDown",
+            null
+          ],
+          "default": null
+        },
+        "delivery": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "retries": {
+              "type": [
+                "string",
+                "integer",
+                "null"
+              ],
+              "pattern": "^-?(?:0|[1-9]\\d*)$",
+              "default": null,
+              "minimum": 1,
+              "maximum": 100
+            },
+            "retryDelays": {
+              "type": [
+                "array",
+                "null"
+              ],
+              "items": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "default": null
+            },
+            "maxRouteTime": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "default": null
+            },
+            "inFlight": {
+              "type": [
+                "string",
+                "integer",
+                "null"
+              ],
+              "pattern": "^-?(?:0|[1-9]\\d*)$",
+              "default": null,
+              "minimum": 1,
+              "maximum": 100
+            },
+            "ordered": {
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "default": null
+            }
+          },
+          "additionalProperties": false,
+          "default": null
+        },
+        "type": {
+          "type": "string"
+        },
+        "parameters": {
+          "type": "object"
+        },
+        "retention": {
+          "type": "string"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "apiVersion",
+    "kind",
+    "metadata",
+    "spec"
+  ],
+  "additionalProperties": false
+}

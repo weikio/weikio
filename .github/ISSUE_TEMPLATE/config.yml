@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Questions
+    url: https://github.com/weikio/weikio/discussions
+    about: Ask in Discussions, where the Weik.io team and other users answer.
+  - name: Ideas
+    url: https://github.com/weikio/weikio/discussions/categories/ideas
+    about: Post your idea in the Ideas category of Discussions.
+  - name: A vulnerability
+    url: https://github.com/weikio/weikio/blob/main/SECURITY.md
+    about: Report it privately as the security policy describes, never in a public issue.
+  - name: Support subscriptions
+    url: https://weik.io/support
+    about: The plans for the installations you run yourself.
