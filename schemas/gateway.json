@@ -279,7 +279,7 @@
                 ],
                 "default": null,
                 "writeOnly": true,
-                "description": "The certificate's private key in PEM, required for a certificate that is not stored yet. The platform seals it and never serves it back; an entry sent without it keeps the stored key of the certificate of the same name and chain."
+                "description": "The certificate's private key in PEM, required when the certificate isn't stored yet. An entry sent without it keeps the stored key of the certificate of the same name and chain. The platform never returns a stored key."
               }
             },
             "required": [

@@ -4,6 +4,7 @@ The first Weik.io installation went into production in January 2018, four years 
 
 | Release | Published | Highlights | Notes |
 |---|---|---|---|
+| 2026.2.1 | 28 October 2026 | Security headers and cookie handling on the gateway, agents that stop what they run after a day without Weik.io, and backend memory that stays level on Weik.io servers that run for weeks. | [Release notes](https://weik.io/releases/2026.2.1) |
 | 2026.2.0 | 24 October 2026 | Camel integrations as versioned folders in Git, managed file transfer, API management, events, logs, metrics and traces, and installations on one server or on as many as you need. | [Release notes](https://weik.io/releases/2026.2.0) |
 | 2026.1 | July 2026 | Running a route of an integration flow by hand from the UI, the CLI and the API, and the CLI as a native binary with install scripts. | [Release notes](https://weik.io/releases/2026.1) |
 | 2025.2 | November 2025 | Event subscriptions and event channels with their own pages in the UI, variables with Dapr secrets, database change tracking and webhooks. | [Release notes](https://weik.io/releases/2025.2) |

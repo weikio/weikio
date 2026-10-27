@@ -114,7 +114,7 @@ The images are on Docker Hub, tagged with the exact version and with no `latest`
 
 | Release | Published | Notes | Files |
 |---|---|---|---|
-| 2026.2.0 | 24 October 2026 | [Release notes](https://weik.io/releases/2026.2.0) | [The CLI, `SHA256SUMS` and `images.env`](https://github.com/weikio/weikio/releases/tag/2026.2.0) |
+| 2026.2.1 | 28 October 2026 | [Release notes](https://weik.io/releases/2026.2.1) | [The CLI, `SHA256SUMS` and `images.env`](https://github.com/weikio/weikio/releases/tag/2026.2.1) |
 
 [CHANGELOG.md](CHANGELOG.md) lists every release with its notes. To hear about each new release, watch this repository with Custom and Releases.
 
