@@ -246,7 +246,16 @@
         "steps": {
           "type": "array"
         },
-        "errorHandler": {}
+        "errorHandler": {},
+        "eventType": {
+          "type": "string"
+        },
+        "eventSource": {
+          "type": "string"
+        },
+        "subject": {
+          "type": "string"
+        }
       },
       "required": [
         "type"

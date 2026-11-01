@@ -59,7 +59,8 @@
                 "string",
                 "integer"
               ],
-              "pattern": "^-?(?:0|[1-9]\\d*)$"
+              "pattern": "^[ ]*([0-9]+(\\.[0-9]+)?|\\.[0-9]+)[ ]*([bB]|[kKmMgGtT]([bB]|[iI][bB])?)?[ ]*$",
+              "description": "A size: a number of bytes, or a number with a unit, such as 512MiB or 3GiB."
             }
           },
           "additionalProperties": false,

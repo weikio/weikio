@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          curl -fsSL https://weik.io/install.sh | WEIKIO_CLI_VERSION=2026.2.1 sh
+          curl -fsSL https://weik.io/install.sh | WEIKIO_CLI_VERSION=2026.2.2 sh
           echo "$HOME/.local/bin" >> "$GITHUB_PATH"
       - run: weikio diff -f ./finance/production --env production --prune finance || [ $? -eq 2 ]
   apply:
@@ -26,7 +26,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          curl -fsSL https://weik.io/install.sh | WEIKIO_CLI_VERSION=2026.2.1 sh
+          curl -fsSL https://weik.io/install.sh | WEIKIO_CLI_VERSION=2026.2.2 sh
           echo "$HOME/.local/bin" >> "$GITHUB_PATH"
           echo "WEIKIO_REASON=$(git log -1 --format=%s)" >> "$GITHUB_ENV"
       - run: weikio apply -f ./finance/production --env production --prune finance -y

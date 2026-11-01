@@ -430,6 +430,60 @@
             ]
           },
           "default": null
+        },
+        "telemetryBatchMaxBytes": {
+          "type": [
+            "string",
+            "integer",
+            "null"
+          ],
+          "pattern": "^[ ]*([0-9]+(\\.[0-9]+)?|\\.[0-9]+)[ ]*([bB]|[kKmMgGtT]([bB]|[iI][bB])?)?[ ]*$",
+          "default": null,
+          "description": "A size: a number of bytes, or a number with a unit, such as 512MiB or 3GiB."
+        },
+        "buildHeap": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null
+        },
+        "telemetryRetention": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "logs": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "pattern": "^(0|([0-9]+y)?([0-9]+w)?([0-9]+d)?([0-9]+h)?([0-9]+m)?([0-9]+s)?([0-9]+ms)?)$",
+              "minLength": 1,
+              "description": "A duration: whole numbers, each with its unit y, w, d, h, m, s or ms, largest first, such as 30s, 1h30m or 7d."
+            },
+            "metrics": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "pattern": "^(0|([0-9]+y)?([0-9]+w)?([0-9]+d)?([0-9]+h)?([0-9]+m)?([0-9]+s)?([0-9]+ms)?)$",
+              "minLength": 1,
+              "description": "A duration: whole numbers, each with its unit y, w, d, h, m, s or ms, largest first, such as 30s, 1h30m or 7d."
+            },
+            "traces": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "pattern": "^(0|([0-9]+y)?([0-9]+w)?([0-9]+d)?([0-9]+h)?([0-9]+m)?([0-9]+s)?([0-9]+ms)?)$",
+              "minLength": 1,
+              "description": "A duration: whole numbers, each with its unit y, w, d, h, m, s or ms, largest first, such as 30s, 1h30m or 7d."
+            }
+          },
+          "additionalProperties": false,
+          "default": null
         }
       },
       "required": [

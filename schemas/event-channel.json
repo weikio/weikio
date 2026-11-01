@@ -245,6 +245,13 @@
         },
         "retention": {
           "type": "string"
+        },
+        "cloudEvents": {
+          "type": "string",
+          "enum": [
+            "binary",
+            "structured"
+          ]
         }
       },
       "required": [],

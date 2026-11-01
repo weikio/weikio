@@ -10,7 +10,7 @@ body:
     attributes:
       label: Release
       description: The release that `weikio version` prints.
-      placeholder: "2026.2.1"
+      placeholder: "2026.2.2"
     validations:
       required: true
   - type: textarea

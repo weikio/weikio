@@ -76,37 +76,52 @@
                 "string",
                 "integer"
               ],
-              "pattern": "^-?(?:0|[1-9]\\d*)$"
+              "pattern": "^[ ]*([0-9]+(\\.[0-9]+)?|\\.[0-9]+)[ ]*([bB]|[kKmMgGtT]([bB]|[iI][bB])?)?[ ]*$",
+              "description": "A size: a number of bytes, or a number with a unit, such as 512MiB or 3GiB."
             },
             "entityEventsBytes": {
               "type": [
                 "string",
                 "integer"
               ],
-              "pattern": "^-?(?:0|[1-9]\\d*)$"
+              "pattern": "^[ ]*([0-9]+(\\.[0-9]+)?|\\.[0-9]+)[ ]*([bB]|[kKmMgGtT]([bB]|[iI][bB])?)?[ ]*$",
+              "description": "A size: a number of bytes, or a number with a unit, such as 512MiB or 3GiB."
             },
             "entityStoreBytes": {
               "type": [
                 "string",
                 "integer"
               ],
-              "pattern": "^-?(?:0|[1-9]\\d*)$"
+              "pattern": "^[ ]*([0-9]+(\\.[0-9]+)?|\\.[0-9]+)[ ]*([bB]|[kKmMgGtT]([bB]|[iI][bB])?)?[ ]*$",
+              "description": "A size: a number of bytes, or a number with a unit, such as 512MiB or 3GiB."
             },
             "deadLetterBytes": {
               "type": [
                 "string",
                 "integer"
               ],
-              "pattern": "^-?(?:0|[1-9]\\d*)$",
-              "default": 0
+              "pattern": "^[ ]*([0-9]+(\\.[0-9]+)?|\\.[0-9]+)[ ]*([bB]|[kKmMgGtT]([bB]|[iI][bB])?)?[ ]*$",
+              "default": 0,
+              "description": "A size: a number of bytes, or a number with a unit, such as 512MiB or 3GiB."
             },
             "idempotencyBytes": {
               "type": [
                 "string",
                 "integer"
               ],
-              "pattern": "^-?(?:0|[1-9]\\d*)$",
-              "default": 0
+              "pattern": "^[ ]*([0-9]+(\\.[0-9]+)?|\\.[0-9]+)[ ]*([bB]|[kKmMgGtT]([bB]|[iI][bB])?)?[ ]*$",
+              "default": 0,
+              "description": "A size: a number of bytes, or a number with a unit, such as 512MiB or 3GiB."
+            },
+            "runsBytes": {
+              "type": [
+                "string",
+                "integer",
+                "null"
+              ],
+              "pattern": "^[ ]*([0-9]+(\\.[0-9]+)?|\\.[0-9]+)[ ]*([bB]|[kKmMgGtT]([bB]|[iI][bB])?)?[ ]*$",
+              "default": null,
+              "description": "A size: a number of bytes, or a number with a unit, such as 512MiB or 3GiB."
             }
           },
           "required": [
