@@ -6,9 +6,9 @@
 
 Include the release that `weikio version` prints and, for a problem on the hub, the output of `weikio-backend doctor`.
 
-## Support subscriptions
+## Support from the Weik.io team
 
-Support subscriptions cover the installations you run yourself, with questions, upgrade help and problem analysis answered by the team that develops Weik.io. Weik.io Dedicated includes support, and Weik.io Cloud includes it from the Startup plan up. The plans and their prices are on https://weik.io/support.
+Support from the team that develops Weik.io is agreed with you, with the response times and support hours your installation needs, whichever way you run Weik.io. https://weik.io/support says how it's agreed and how to open a case.
 
 ## Learning Weik.io
 

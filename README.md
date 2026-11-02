@@ -132,7 +132,7 @@ Post your ideas in the [Ideas category of Discussions](https://github.com/weikio
 
 - Ask questions in [Discussions](https://github.com/weikio/weikio/discussions).
 - Report a bug with the [bug form](https://github.com/weikio/weikio/issues/new?template=bug.yml), and a problem in the docs with the [docs form](https://github.com/weikio/weikio/issues/new?template=docs.yml).
-- Support subscriptions for the installations you run yourself are on https://weik.io/support, and the team that develops Weik.io answers every case.
+- Support is agreed with you, as https://weik.io/support describes, and the team that develops Weik.io answers every case.
 
 ## Security
 
