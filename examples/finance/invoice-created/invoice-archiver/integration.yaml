@@ -1,4 +1,0 @@
-name: invoice-archiver
-version: 1.0.0
-camelVersion: "4.22.1"
-requirements: { os: linux }

@@ -1,5 +1,0 @@
-apiVersion: weik.io/v1
-kind: event-channel
-metadata: { name: invoice-created, project: finance }
-spec:
-  description: One event per invoice created in the ERP, JSON body

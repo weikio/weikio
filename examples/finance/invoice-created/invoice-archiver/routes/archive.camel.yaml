@@ -1,6 +1,0 @@
-- route:
-    id: archive-invoices
-    from:
-      uri: "kamelet:weikio-event-source?channel=invoice-created"
-      steps:
-        - to: "file:{{archive-dir}}"

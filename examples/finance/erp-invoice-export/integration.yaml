@@ -1,4 +1,0 @@
-name: erp-invoice-export
-version: 1.1.0
-camelVersion: "4.22.1"
-requirements: { os: linux }

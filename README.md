@@ -93,14 +93,14 @@ The first build takes about 16 seconds because Weik.io resolves the Camel librar
 
 ## Examples
 
-The [examples](examples) folder has the integrations that the docs, the University videos and the live demo use, and its README shows how to apply them to your Weik.io installation:
+The repository [weikio/gitops-example](https://github.com/weikio/gitops-example) has the integrations that the docs, the University videos and the live demo use, and its README shows how to apply them to your Weik.io installation:
 
-- [`hello`](examples/hello): the integration `weikio init hello` writes, a timer that logs a line every 5 seconds
-- [`finance/erp-invoice-export`](examples/finance/erp-invoice-export): a Camel integration that sends each new invoice to the ERP over HTTP, with a variable, a secret and the custom metric `invoices_processed`
-- [`finance/transfers/supplier-invoices.yaml`](examples/finance/transfers/supplier-invoices.yaml): a transfer that moves supplier invoice PDFs from an FTP server to Azure Blob Storage every morning at 05:00 UTC
-- [`finance/apis/invoices`](examples/finance/apis/invoices): the API `finance/invoices` with version `v1` and the subscription `partner-x`
-- [`finance/invoice-created`](examples/finance/invoice-created): the channel that `erp-invoice-export` publishes to and `invoice-archiver` receives from
-- [`.github/workflows`](examples/.github/workflows): `plan.yaml`, `devtest.yaml` and `production.yaml`, the GitHub Actions workflows that show the plan on each pull request and apply the folder to devtest and production after a merge
+- [`hello`](https://github.com/weikio/gitops-example/tree/main/hello): the integration `weikio init hello` writes, a timer that logs a line every 5 seconds
+- [`finance/erp-invoice-export`](https://github.com/weikio/gitops-example/tree/main/finance/erp-invoice-export): a Camel integration that sends each new invoice to the ERP over HTTP, with a variable, a secret and the custom metric `invoices_processed`
+- [`finance/transfers/supplier-invoices.yaml`](https://github.com/weikio/gitops-example/blob/main/finance/transfers/supplier-invoices.yaml): a transfer that moves supplier invoice PDFs from an FTP server to Azure Blob Storage every morning at 05:00 UTC
+- [`finance/apis/invoices`](https://github.com/weikio/gitops-example/tree/main/finance/apis/invoices): the API `finance/invoices` with version `v1` and the subscription `partner-x`
+- [`finance/invoice-created`](https://github.com/weikio/gitops-example/tree/main/finance/invoice-created): the channel that `erp-invoice-export` publishes to and `invoice-archiver` receives from
+- [`.github/workflows`](https://github.com/weikio/gitops-example/tree/main/.github/workflows): `plan.yaml`, `devtest.yaml` and `production.yaml`, the GitHub Actions workflows that show the plan on each pull request that changes `finance/` and apply the folder to devtest and production after a merge
 
 ## Install Weik.io
 

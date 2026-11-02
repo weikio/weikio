@@ -1,9 +1,0 @@
-apiVersion: weik.io/v1
-kind: mft
-metadata: { name: supplier-invoices, project: finance }
-spec:
-  schedule: "0 0 5 * * ?"
-  source:      { remote: supplier-ftp,    path: /outgoing }
-  destination: { remote: invoice-archive, path: invoices/incoming }
-  operation: move
-  filters: ["*.pdf"]

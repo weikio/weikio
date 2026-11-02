@@ -1,6 +1,0 @@
-apiVersion: weik.io/v1
-kind: project
-metadata: { name: finance }
-spec:
-  displayName: Finance
-  description: Invoices between the ERP, the suppliers and the partners
