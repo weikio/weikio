@@ -9,6 +9,6 @@ contact_links:
   - name: A vulnerability
     url: https://github.com/weikio/weikio/blob/main/SECURITY.md
     about: Report it privately as the security policy describes, never in a public issue.
-  - name: Support subscriptions
+  - name: Support
     url: https://weik.io/support
-    about: The plans for the installations you run yourself.
+    about: How support from the team that develops Weik.io is agreed, and how to open a case.
