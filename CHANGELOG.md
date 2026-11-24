@@ -4,6 +4,8 @@ The first Weik.io installation went into production in January 2018, four years 
 
 | Release | Published | Highlights | Notes |
 |---|---|---|---|
+| 2026.2.4 | 17 November 2026 | Backups on a hub of several servers that list the agent credentials that no longer work on any of its servers, and a limit on how much memory incoming telemetry can use on each hub server. | [Release notes](https://weik.io/releases/2026.2.4) |
+| 2026.2.3 | 9 November 2026 | API keys that can have all of their owner's access, and .NET 10.0.14 in every image, which fixes a high-severity advisory. | [Release notes](https://weik.io/releases/2026.2.3) |
 | 2026.2.2 | 1 November 2026 | Agents on Windows Server with a signed installer, run records for every schedule, telemetry retention and build memory as installation settings, CloudEvents on every channel with a sink, and a rollback that says what it erases before it moves anything. | [Release notes](https://weik.io/releases/2026.2.2) |
 | 2026.2.1 | 28 October 2026 | Security headers and cookie handling on the gateway, agents that stop what they run after a day without Weik.io, and backend memory that stays level on Weik.io servers that run for weeks. | [Release notes](https://weik.io/releases/2026.2.1) |
 | 2026.2.0 | 24 October 2026 | Camel integrations as versioned folders in Git, managed file transfer, API management, events, logs, metrics and traces, and installations on one server or on as many as you need. | [Release notes](https://weik.io/releases/2026.2.0) |

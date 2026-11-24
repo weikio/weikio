@@ -19,7 +19,7 @@ Weik.io is an open source GitOps integration platform that manages integrations,
 | 2022 | Release 2022.1, with agents, integration flows and event-driven integrations. |
 | 2023 to July 2026 | Releases 2023.1 to 2026.1 added managed file transfer, the entity store, API management, event channels and change tracking. |
 | October 2026 | Release 2026.2.0, with integrations as folders of Camel files in Git, environments and promotion, and installations on one server or on as many as you need. |
-| November 2026 | Release 2026.2.2, which adds agents on Windows Server and run records for every schedule. |
+| November 2026 | Releases 2026.2.2 to 2026.2.4, which add agents on Windows Server and API keys that can have all of their owner's access. |
 
 Every release since 2022.1 has built on the same agents, CLI and admin UI. This repository starts at release 2026.2.0, which is why its commit history is short. [CHANGELOG.md](CHANGELOG.md) lists the highlights of each release from 2022.1 on, and [The company behind Weik.io](https://weik.io/company) has the longer history.
 
@@ -116,7 +116,7 @@ The images are on Docker Hub, tagged with the exact version and with no `latest`
 
 | Release | Published | Notes | Files |
 |---|---|---|---|
-| 2026.2.2 | 1 November 2026 | [Release notes](https://weik.io/releases/2026.2.2) | [The CLI, the Windows agent installer, `SHA256SUMS` and `images.env`](https://github.com/weikio/weikio/releases/tag/2026.2.2) |
+| 2026.2.4 | 17 November 2026 | [Release notes](https://weik.io/releases/2026.2.4) | [The CLI, the Windows agent installer, `SHA256SUMS` and `images.env`](https://github.com/weikio/weikio/releases/tag/2026.2.4) |
 
 [CHANGELOG.md](CHANGELOG.md) lists every release with its notes. To hear about each new release, watch this repository with Custom and Releases.
 

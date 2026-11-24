@@ -448,6 +448,13 @@
           ],
           "default": null
         },
+        "allowBuildsWithoutNetworkLimit": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "default": null
+        },
         "telemetryRetention": {
           "type": [
             "object",
